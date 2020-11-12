@@ -1,0 +1,1 @@
+// Here the rider model using the user model
