@@ -2,6 +2,10 @@
   "name": "The-Ganondorf",
   "version": "1.0.0",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.10.15"
+  },
+  "devDependencies": {
+    "axios": "^0.21.0"
   }
 }
