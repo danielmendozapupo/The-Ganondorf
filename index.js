@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const mongoose = require('mongoose');
-
+const carDate = require('./data/cardata.json');
 
 const app = express();
 app.use(express.json());
@@ -13,11 +13,11 @@ const User = require('./models/user');
 
 
 //Database name
-const dbName = 'NoUber_Project';
+// const dbName = 'NoUber_Project';
 let database;
 
-const url = `mongodb+srv://dbUser:dbUserPassword@cluster0.ij9xt.mongodb.net/${dbName}?retryWrites=true&w=majority`;
-
+// const url = `mongodb+srv://dbUser:dbUserPassword@cluster0.ij9xt.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const url = 'mongodb+srv://kinpr00:Kin12345@cluster0.rwres.mongodb.net/Nuber?retryWrites=true&w=majority'
 
 //axios header config
 const config = {
@@ -39,12 +39,13 @@ const initDatabase = async ()=>{
 
 const initializeUsers = async()=>{
     const users = [];
+    const drivers =[];
 
     const firstNamePromise = await axios.get('https://randommer.io/api/Name?nameType=firstname&quantity=50',config);
     const lastNamePromise = await axios.get('https://randommer.io/api/Name?nameType=surname&quantity=50', config);
     const phoneNumber = await axios.get('https://randommer.io/api/Phone/Generate?CountryCode=US&Quantity=50');
 
-    const roles = ['driver', 'rider'];
+    const roles = ['driver'/*, 'rider'*/];
 
     const extensions = ['@hotmail.com', '@gmail.com', '@yahoo.com'];
 
@@ -62,6 +63,17 @@ const initializeUsers = async()=>{
 
 };
 
+const initializeCar = async ()=>{
+    const cars = [];
+    const storeCars = data;
+    const carcolors =['blue', 'red', 'orange', 'yellow', 'black', 'white'];
+    const years = ['2009', '2010', '2015', '2017', '2018', '2019', '2020'];
+    storeCars.forEach(car=>{
+        const color = carcolors[Math.floor(Math.random()*carcolors.length)];
+        const year = years[Math.floor(Math.random()*years.length)];
+        cars.push({active:true, color: color, make: car.make, model: car.model,year: year});
+    })
+}
 
 const initializeAllData = async ()=>{
     await initDatabase();
