@@ -22,7 +22,13 @@
     <list default="true" id="243f32f7-052e-457b-8eb0-d6979a4b7127" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Car.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/car.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/driver.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/driver.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/rider.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +57,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.0.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.7" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/index.js" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="index" type="NodeJSConfigurationType" path-to-js-file="index.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -85,10 +96,67 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1824" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606280190782">
+      <screen x="-1920" y="0" width="1280" height="680" />
+    </state>
+    <state x="-1824" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606280190782" />
+    <state x="-1499" y="95" key="FileChooserDialogImpl" timestamp="1606280183086">
+      <screen x="-1920" y="0" width="1280" height="680" />
+    </state>
+    <state x="-1499" y="95" key="FileChooserDialogImpl/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606280183086" />
+    <state width="1259" height="150" key="GridCell.Tab.0.bottom" timestamp="1606325068181">
+      <screen x="-1920" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="150" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606325068181" />
+    <state width="1259" height="150" key="GridCell.Tab.0.center" timestamp="1606325068181">
+      <screen x="-1920" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="150" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606325068181" />
+    <state width="1259" height="150" key="GridCell.Tab.0.left" timestamp="1606325068181">
+      <screen x="-1920" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="150" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606325068181" />
+    <state width="1259" height="150" key="GridCell.Tab.0.right" timestamp="1606325068181">
+      <screen x="-1920" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="150" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606325068181" />
     <state x="-1698" y="281" width="848" height="606" key="dock-window-1" timestamp="1606270606754">
       <screen x="-1920" y="0" width="1280" height="680" />
     </state>
     <state x="-1698" y="281" width="848" height="606" key="dock-window-1/-1920.0.1280.680/0.0.1067.643@0.0.1067.643" timestamp="1606270606754" />
+    <state x="13" y="329" width="493" height="474" key="dock-window-2" timestamp="1606280133442">
+      <screen x="0" y="0" width="1067" height="643" />
+    </state>
+    <state x="13" y="329" width="493" height="474" key="dock-window-2/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606280133442" />
+    <state x="-1748" y="55" width="848" height="474" key="dock-window-2/-1920.0.1280.680/0.0.1067.643@0.0.1067.643" timestamp="1606277682268" />
+    <state x="0" y="0" width="1062" height="505" key="dock-window-3" timestamp="1606278649391">
+      <screen x="0" y="0" width="1067" height="643" />
+    </state>
+    <state x="0" y="0" width="1062" height="505" key="dock-window-3/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606278649391" />
+    <state x="543" y="27" width="1062" height="505" key="dock-window-4" timestamp="1606278649391">
+      <screen x="0" y="0" width="1067" height="643" />
+    </state>
+    <state x="543" y="27" width="1062" height="505" key="dock-window-4/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606278649391" />
+    <state x="0" y="0" width="1030" height="516" key="dock-window-5" timestamp="1606326171038">
+      <screen x="0" y="0" width="1067" height="643" />
+    </state>
+    <state x="0" y="0" width="1030" height="516" key="dock-window-5/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606326171038" />
+    <state x="-1656" y="0" width="1030" height="516" key="dock-window-6" timestamp="1606322580159">
+      <screen x="-1920" y="0" width="1280" height="680" />
+    </state>
+    <state x="-1656" y="0" width="1030" height="516" key="dock-window-6/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606322580159" />
+    <state x="-1656" y="0" width="1030" height="516" key="dock-window-7" timestamp="1606322580159">
+      <screen x="-1920" y="0" width="1280" height="680" />
+    </state>
+    <state x="-1656" y="0" width="1030" height="516" key="dock-window-7/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606322580159" />
+    <state x="-4" y="241" width="1030" height="516" key="dock-window-8" timestamp="1606326171038">
+      <screen x="0" y="0" width="1067" height="643" />
+    </state>
+    <state x="-4" y="241" width="1030" height="516" key="dock-window-8/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606326171038" />
+    <state x="0" y="39" width="1030" height="516" key="dock-window-9" timestamp="1606322768812">
+      <screen x="0" y="0" width="1067" height="643" />
+    </state>
+    <state x="0" y="39" width="1030" height="516" key="dock-window-9/-1920.0.1280.680/0.0.1067.643@-1920.0.1280.680" timestamp="1606322768812" />
     <state x="253" y="1" width="672" height="642" key="search.everywhere.popup" timestamp="1606269184566">
       <screen x="0" y="0" width="1067" height="643" />
     </state>

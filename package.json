@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.10.15"
+    "mongoose": "^5.10.15",
+    "response-time": "^2.3.2"
   },
   "devDependencies": {
     "axios": "^0.21.0"

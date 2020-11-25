@@ -11,12 +11,14 @@ const DriverSchema = new mongoose.Schema(
         active : Boolean,
         available : Boolean,
         user : {type:mongoose.ObjectId, ref: 'User'},
+            password:String,
         car:{type:mongoose.ObjectId, ref: 'Car'},
         location : String,
         passenger_location: String,
         passenger_destination: String,
         hours_worked: Number,
-        earnings: Number
+        earnings: Number,
+            reviews: [{}]
     }
 )
 
