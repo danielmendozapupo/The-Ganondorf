@@ -8,12 +8,12 @@
 const mongoose = require('mongoose');
 const DriverSchema = new mongoose.Schema(
     {
-        active : Boolean,
-        available : Boolean,
+        active : Boolean, ///active as a driver meaning the company allow this driver to use its platform
+        available : Boolean, // available to drive meaning: the driver is in his car and accepting ride requests
         user : {type:mongoose.ObjectId, ref: 'User'},
             password:String,
         car:{type:mongoose.ObjectId, ref: 'Car'},
-        location : String,
+        location : String, // a function will generate random locations around the city
         passenger_location: String,
         passenger_destination: String,
         hours_worked: Number,

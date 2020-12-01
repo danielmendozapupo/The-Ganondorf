@@ -1,18 +1,27 @@
 const express = require('express');
 const axios = require('axios');
 const mongoose = require('mongoose');
+
 const carData = require('./data/cardata.json');
 const Car = require('./models/car')
+
+const router = express.Router();
+
 const app = express();
 app.use(express.json());
-
-
-const port = process.env.PORT || 8080;
 
 const User = require('./models/user');
 const Driver = require("./models/driver");
 const Rider = require("./models/rider");
 const Admin = require("./models/admin");
+
+const port = process.env.PORT || 8080;
+
+const adminRoutes = require('./routes/admin');
+const driverRoutes = require('./routes/driver');
+const riderRoutes = require('./routes/rider');
+
+
 
 //Database name
 // const dbName = 'NoUber_Project';
@@ -28,9 +37,12 @@ const config = {
     }
 }
 
+mongoose.set('useFindAndModify', false);
+
 const initDatabase = async ()=>{
     database = await mongoose.connect(url,{useCreateIndex: true, useUnifiedTopology:true, useNewUrlParser: true });
     if(database){
+        app.use(router);
         console.log('Successfully connected to my DB');
     }
     else{
@@ -122,7 +134,7 @@ const initializeAdmin= async ()=>{
         const email = name.toLowerCase() +'.' + results[1].data[index].toLowerCase() +
             extensions[Math.floor(Math.random() * extensions.length)];
 
-        const newAdmin = {firstName, lastName, phoneNumber: phoneNumber, email,login:`${firstName}.${lastName}`,
+        const newAdmin = {firstName, lastName, phoneNumber: phoneNumber, email,login:`admin`,
             password: 'admin', role:'admin'};
 
         // console.log(users);
@@ -154,11 +166,16 @@ initializeAllData();
 
 //app.use();
 
+app.use(adminRoutes);
+// app.use(driverRoutes);
+// app.use(riderRoutes);
+
+
 app.use((req, res) => {
     res.status(404).send('Element Not Found');
 });
 
 
 app.listen(port, ()=>{
-    console.log(`Ecommerce app listening at http://localhost:${port}`);
+    console.log(`Nuber app listening at http://localhost:${port}`);
 })
