@@ -14,6 +14,7 @@ const DriverSchema = new mongoose.Schema(
             password:String,
         car:{type:mongoose.ObjectId, ref: 'Car'},
         location : String, // a function will generate random locations around the city
+        // passenger:{ type:mongoose.ObjectId, ref: 'Rider'},
         passenger_location: String,
         passenger_destination: String,
         hours_worked: Number,

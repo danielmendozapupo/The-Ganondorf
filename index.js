@@ -167,7 +167,7 @@ initializeAllData();
 //app.use();
 
 app.use(adminRoutes);
-// app.use(driverRoutes);
+app.use(driverRoutes);
 // app.use(riderRoutes);
 
 
