@@ -20,15 +20,18 @@ const port = process.env.PORT || 8080;
 const adminRoutes = require('./routes/admin');
 const driverRoutes = require('./routes/driver');
 const riderRoutes = require('./routes/rider');
-
-
+const Address = require('./models/address')
 
 //Database name
-// const dbName = 'NoUber_Project';
+const dbName = 'NoUber_Project';
 let database;
 
-// const url = `mongodb+srv://dbUser:dbUserPassword@cluster0.ij9xt.mongodb.net/${dbName}?retryWrites=true&w=majority`;
-const url = `mongodb+srv://kinpr00:Kin12345@cluster0.rwres.mongodb.net/Nuber?retryWrites=true&w=majority`
+const url = `mongodb+srv://dbUser:dbUserPassword@cluster0.ij9xt.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+// const url = `mongodb+srv://kinpr00:Kin12345@cluster0.rwres.mongodb.net/Nuber?retryWrites=true&w=majority`
+const googleApiKey ='AIzaSyCmpbSQfBIhSEn3w-gkQO3rjg0G0tBV9bA';
+const addrUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Austin&key=${googleApiKey}`
+
+
 
 //axios header config
 const config = {
@@ -49,6 +52,23 @@ const initDatabase = async ()=>{
         console.log('Error connecting to my DB');
     }
 }
+
+
+const initializeAddress = async()=>{
+    const address = [];
+    axios(addrUrl)
+        .then(function (response) {
+            for(let i = 0; i< response.data["results"].length;i++){
+                const newAddr = response.data["results"][i]["formatted_address"]
+                address.push({address:newAddr});
+            }
+            Address.create(address);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+};
 
 
 const initializeUsers = async()=>{
@@ -83,14 +103,15 @@ const initializeDriverRider= async ()=>{
     const drivers =[];
     const riders = [];
     const users = await User.find({});
-    const cars =await Car.find({})
+    const cars = await Car.find({});
+    const address = await Address.find({});
 
 
     users.forEach(user=>{
         if(user.role ==='driver'){
             const assignedCar = cars[Math.floor(Math.random()*cars.length)];
-
-            drivers.push({active:true, available: true,user: user, car: assignedCar,location: '', passenger_location:'',passenger_destination:'',
+            const assignedLocation = address[Math.floor(Math.random()*address.length)];
+            drivers.push({active:true, available: true,user: user, car: assignedCar, location: assignedLocation,passenger_location:'',passenger_destination:'',
                 hours_worked:0, earnings: 0, password: user.password,reviews: [{}]})
         }
         if(user.role === 'rider'){
@@ -153,13 +174,15 @@ const initializeAllData = async ()=>{
     // await Driver.deleteMany({});
     // await Rider.deleteMany({})
     // await Car.deleteMany({});
+    // await Address.deleteMany({});
 
     await initDatabase();
+    await initializeAddress();
     // await User.deleteMany({}); // clean the database before populate it.
-    // await initializeCar();
-    // await initializeUsers();
-    // await initializeDriverRider();
-    // await initializeAdmin();
+    await initializeCar();
+    await initializeUsers();
+    await initializeDriverRider();
+    await initializeAdmin();
 };
 
 initializeAllData();
@@ -169,6 +192,9 @@ initializeAllData();
 app.use(adminRoutes);
 app.use(driverRoutes);
 // app.use(riderRoutes);
+
+
+
 
 
 app.use((req, res) => {

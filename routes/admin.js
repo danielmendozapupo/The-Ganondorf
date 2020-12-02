@@ -4,7 +4,7 @@ const User = require('../models/user');
 const Rider = require('../models/rider');
 const Driver = require('../models/driver');
 const Car = require("../models/car");
-
+const Address = require('../models/address')
 
 const router = express.Router();
 
@@ -12,6 +12,15 @@ router.get('/admin/user/:UserId', async (req, res)=>{
     const userFound = await User.findById({_id: req.params.UserId})/*.populate('')*/;
     res.send(userFound || 404);
 })
+
+router.get('/admin/address', async (req, res)=>{
+        const foundAddress = await Address.find({})/*.populate('address');*/
+        console.log(foundAddress);
+        res.send(foundAddress ? foundAddress : 404);
+    })
+
+
+
 
 //Get all user that
 router.get('/admin/users', async (req, res)=>{
@@ -37,7 +46,8 @@ router.get('/admin/users/drivers', async (req, res)=>{
 
      res.send(foundUsers ? foundUsers:404);*/
     if(req.query.firstName){
-        await Driver.user.find({firstName: req.query.firstName }).then( foundDrivers =>{
+        await Driver.user.find({firstName: req.query.firstName })
+            .then( foundDrivers =>{
             console.log(foundDrivers);
             res.send(foundDrivers);
         }).catch(err => {
