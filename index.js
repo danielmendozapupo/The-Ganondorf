@@ -28,7 +28,7 @@ let database;
 
 // const url = `mongodb+srv://dbUser:dbUserPassword@cluster0.ij9xt.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 const url = `mongodb+srv://kinpr00:Kin12345@cluster0.rwres.mongodb.net/Nuber?retryWrites=true&w=majority`
-const googleApiKey ='AIzaSyCmpbSQfBIhSEn3w-gkQO3rjg0G0tBV9bA';
+const googleApiKey ='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 const addrUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+Austin&key=${googleApiKey}`
 
 
